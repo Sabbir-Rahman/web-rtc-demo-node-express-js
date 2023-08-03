@@ -28,7 +28,7 @@ const ContextProvider = ({children}) => {
 
         socket.on('me', (id) => setMe(id))
 
-        socket.on('receivecall', ({ from, name: callerName, signal})=> {
+        socket.on('callRing', ({ from, name: callerName, signal})=> {
             setCall({ isReceivedCall: true, from,name: callerName, signal})
         })
     },[])
